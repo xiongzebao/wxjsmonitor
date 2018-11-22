@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#098761</color>
+    <color name="colorPrimaryDark">#0000ff</color>
+    <color name="colorAccent">#0000ff</color>
+    <color name="colorWindowBackground">#ffffff</color>
+    <color name="textColorPrimary">#666666</color>
+
+
+
+    <color name="mainBgColor">#ffffff</color>
+    <color name="secondBgColor">#eeeeee</color>
+    <color name="thirdBgColor">#cccccc</color>
+
+
+    <color name="color_black">#000000</color>
+    <color name="color_gray">#cccccc</color>
+    <color name="colorPrimaryNight">#1A1A1B</color>
+    <color name="colorPrimaryDarkNight">#1E1F21</color>
+    <color name="gray">#AAAAAA</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorRed">#ff0000</color>
+
+    <color name="bgColor">#ff0000</color>
+</resources>

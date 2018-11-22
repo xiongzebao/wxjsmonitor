@@ -1,0 +1,72 @@
+ext{
+
+    android = [
+            compileSdkVersion: 26,
+            buildToolsVersion: "26.0.2",
+            minSdkVersion    : 19,
+            targetSdkVersion : 26,
+            versionCode      : 1,
+            versionName      : "1.0",
+            kotlin_version    :'1.2.51'
+    ]
+
+    dependVersion = [
+            androidSupportSdkVersion: "27.1.1",
+            retrofitSdkVersion      : "2.3.0",
+            glideSdkVersion         : "4.0.0",
+            rxJava                  : "2.1.5",
+            rxAndroid               : "2.0.1",
+            logger                  :  "2.1.1",
+            SmartRefreshLayout       :"1.0.5.1",
+            SmartRefreshLayoutHeader : "1.0.5.1",
+            rxpermission            :"0.10.2",
+            BaseRecyclerViewAdapterHelper:"2.9.30",
+            rxbinding               :"0.4.0",
+            glide                   :"3.7.0",
+            zxing      :"1.2.1",
+            statusbarutil :"1.5.1",
+            SmartRefreshHeader:"1.0.5.1"
+    ]
+
+    importlibs = [
+            api: [
+                    //--------  support  -------
+                    supportv4               : "com.android.support:support-v4:$dependVersion.androidSupportSdkVersion",
+                    appcompatv7             : "com.android.support:appcompat-v7:$dependVersion.androidSupportSdkVersion",
+                    cardview                : "com.android.support:cardview-v7:$dependVersion.androidSupportSdkVersion",
+                    design                  : "com.android.support:design:$dependVersion.androidSupportSdkVersion",
+                    annotations             : "com.android.support:support-annotations:$dependVersion.androidSupportSdkVersion",
+                    //------ retrofit和RxJava ---------
+                    retrofit                : "com.squareup.retrofit2:retrofit:$dependVersion.retrofitSdkVersion",
+                    rxJava                : "io.reactivex.rxjava2:rxjava:$dependVersion.rxJava",
+                    rxAndroid             : "io.reactivex.rxjava2:rxandroid:$dependVersion.rxAndroid",
+                    kotlin_version         :"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$android.kotlin_version",
+                    //Logger
+                    logger                  : "com.orhanobut:logger:$dependVersion.logger",
+                    SmartRefreshLayout      : "com.scwang.smartrefresh:SmartRefreshLayout:$dependVersion.SmartRefreshLayout",
+                   // SmartRefreshLayoutHeader: "com.scwang.smartrefresh:SmartRefreshHeader:$dependVersion.SmartRefreshLayoutHeader",
+                    rxpermission            : "com.github.tbruyelle:rxpermissions:$dependVersion.rxpermission",
+                  //  BaseRecyclerViewAdapterHelper :"com.github.CymChad:BaseRecyclerViewAdapterHelper:$dependVersion.BaseRecyclerViewAdapterHelper "
+                    rxbinding               :  "com.jakewharton.rxbinding:rxbinding:$dependVersion.rxbinding",
+                   // glide                   :"com.github.bumptech.glide:glide:$dependVersion.glide"
+                     zxing                 : "cn.bingoogolapple:bga-qrcode-zxing:$dependVersion.zxing",
+                    statusbarutil           :  "com.jaeger.statusbarutil:library:$dependVersion.statusbarutil",
+                  //  SmartRefreshHeader      :" com.scwang.smartrefresh:SmartRefreshHeader $dependVersion.SmartRefreshHeader"
+
+            ],
+
+
+            implementation: [
+                    retrofitConverterGson   : "com.squareup.retrofit2:converter-gson:$dependVersion.retrofitSdkVersion",
+                    retrofitAdapterRxjava2  : "com.squareup.retrofit2:adapter-rxjava2:$dependVersion.retrofitSdkVersion",
+                    okhttp3LoggerInterceptor: 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+            ]
+    ]
+
+
+    apiLibs = importlibs.api.values()
+    implementationLibs = importlibs.implementation.values()
+
+
+
+}
