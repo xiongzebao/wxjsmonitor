@@ -21,6 +21,7 @@ public class YTOBaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         BaseAppHelper.Instance().pushActivity(this);
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
        // getDelegate().setLocalNightMode(UserInfoUtils.getNightMode());
         Log.e("xiong",UserInfoUtils.getNightMode()+"---------");
@@ -62,6 +63,7 @@ public class YTOBaseActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        Log.e("xiong",this.getClass().getSimpleName()+"Destroyed");
         BaseAppHelper.Instance().popActivity();
         CleanLeakUtils.INSTANCE.fixInputMethodManagerLeak(this);
         super.onDestroy();

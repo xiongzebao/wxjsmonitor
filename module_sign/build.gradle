@@ -14,15 +14,14 @@ kapt {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 27
 
     defaultConfig {
 
-        minSdkVersion 15
-        targetSdkVersion 28
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -53,7 +52,7 @@ android {
             }
         }
     }
-    resourcePrefix project.getName()+"_"
+   // resourcePrefix project.getName()+"_"
 
 }
 
@@ -61,4 +60,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     kapt 'com.alibaba:arouter-compiler:1.1.4'
     implementation project(':commenlibrary')
+    implementation 'com.github.nkzawa:socket.io-client:0.3.0'
+    implementation 'xiaofei.library:hermes-eventbus:0.3.0'
 }

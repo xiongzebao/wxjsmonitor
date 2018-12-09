@@ -3,6 +3,7 @@ package cn.net.yto.module_baselibrary_test
 import android.view.ViewGroup
 import cn.net.yto.baselibrary.base.BaseActivity
 import cn.net.yto.baselibrary.base.BaseAppUtils
+import cn.net.yto.module_baselibrary_test.Receiver.BradCastUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
@@ -34,7 +35,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initListener() {
-        testBtn.setOnClickListener { BaseAppUtils.startActivity(TestActivity::class.java) }
+
     }
 
 

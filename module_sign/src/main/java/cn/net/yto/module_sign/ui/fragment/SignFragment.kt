@@ -11,7 +11,7 @@ class SignFragment:BaseFragment(){
     }
 
     override fun getContentLayoutId(): Int {
-        return R.layout.module_sign_act_main
+        return R.layout.module_sign_act_main1
     }
 
     override fun initView() {

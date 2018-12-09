@@ -7,12 +7,20 @@
 
     tools:context=".MainActivity">
 
-     <android.support.v7.widget.AppCompatButton
-         android:text="test"
-         android:id="@+id/testBtn"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content" />
 
 
-
+     <cn.net.yto.module_baselibrary_test.view.PasswordInputView
+         android:id="@+id/passwordInputView"
+         android:layout_width="match_parent"
+         android:layout_height="56dp"
+         android:layout_marginTop="25dp"
+         android:cursorVisible="false"
+         android:inputType="number"
+         android:maxLength="6"
+         app:pivBorderColor="#cccccc"
+         app:pivBorderRadius="10dp"
+         app:pivBorderWidth="10dp"
+         app:pivPasswordColor="#cccccc"
+         app:pivPasswordLength="6"
+         app:pivPasswordWidth="10dp" />
 </RelativeLayout>

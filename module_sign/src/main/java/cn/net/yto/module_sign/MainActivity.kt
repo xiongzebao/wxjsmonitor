@@ -1,42 +1,65 @@
 package cn.net.yto.module_sign
 
+import android.content.Intent
+import android.os.Build
+import android.os.Bundle
+import android.util.Log
 import cn.net.yto.baselibrary.base.BaseActivity
+import cn.net.yto.baselibrary.base.YTOBaseActivity
+import cn.net.yto.module_sign.service.MyService
+import cn.net.yto.module_sign.utils.BradCastUtils
+import cn.net.yto.module_sign.utils.NoticeManager
+import cn.net.yto.module_sign.utils.SocketIOUtils
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.launcher.ARouter
-import kotlinx.android.synthetic.main.module_sign_act_main.*
+import org.greenrobot.eventbus.ThreadMode
+import org.greenrobot.eventbus.Subscribe
+import xiaofei.library.hermeseventbus.HermesEventBus
+
 
 @Route(path = "/module_sign/main")
-class MainActivity : BaseActivity() {
-    override fun setTopTitle(): String {
-            return "签到"
+class MainActivity :  BaseActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
     }
-
-
     override fun setPresenter() {
-        ARouter.getInstance().inject(this)  // Start auto inject.
+
     }
 
     override fun getContentLayoutId(): Int {
-     return R.layout.module_sign_act_main
+      return R.layout.module_sign_act_main1
     }
 
-    override fun initView() {
-
-    }
 
     override fun initData() {
+        initService()
+      //  BradCastUtils.registerNoticeBroadCast(this)
+    }
+
+    private fun initService() {
+        val serviceIntent = Intent(this, MyService::class.java)
+
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            //android8.0以上通过startForegroundService启动service
+            startForegroundService( serviceIntent);
+        }else{
+            startService( serviceIntent);
+        }
+
 
     }
+
 
     override fun initListener() {
-        jumpToInfoActivity.setOnClickListener({
 
-
-            ARouter.getInstance().build( "/module_info/main") .withString("name", "老王") .withInt("age", 18) .withString("url", "https://a.b.c").navigation();
-
-
-        })
     }
+
+    override fun setTopTitle(): String {
+      return ""
+    }
+
 
 
 }

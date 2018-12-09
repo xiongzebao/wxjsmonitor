@@ -28,18 +28,8 @@ class SignFragment1:BaseFragment(){
     }
 
     override fun initListener() {
-      val dayBtn=  rootView.findViewById<View>(R.id.dayBtn)
-        dayBtn.setOnClickListener(){
-            val act :YTOBaseActivity= BaseAppUtils.getActivity() as YTOBaseActivity;
-            UserInfoUtils.setNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            act.setNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-        val nightBtn=  rootView.findViewById<View>(R.id.nightBtn)
-        nightBtn.setOnClickListener(){
-            UserInfoUtils.setNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            val act :YTOBaseActivity= BaseAppUtils.getActivity() as YTOBaseActivity;
-            act.setNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }
+
+
     }
 
     override fun start() {
